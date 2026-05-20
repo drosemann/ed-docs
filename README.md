@@ -1,19 +1,40 @@
 # Synapse Editor
 
-Synapse Editor is a modernization-focused fork of the historical `ed` codebase (fork source: Distrotech/ed). It currently preserves `ed` behavior and command compatibility while the project is incrementally prepared for a future terminal UI (TUI) editor roadmap.
+Synapse is now a dual-track editor project:
 
-## Project overview
+1. **Legacy core**: a stable C implementation derived from historical `ed` behavior.
+2. **Modern editor**: a new **React-based terminal UI** (`tui/`) inspired by contemporary coding assistants and modal terminal editors.
 
-This repository contains the C implementation, manual sources, and tests for a classic line editor runtime. The near-term objective is repository hygiene, maintainability, and contributor readiness; long-term objective is a modern TUI editing experience built from a stable core.
+## What's new
 
-## Features / purpose
+- Added a modern TUI prototype built with **React + Ink**.
+- Preserved existing C editor engine and regression tests.
+- Documented workflows for both legacy and modern tracks.
 
-- Compatible with traditional `ed` workflows and scripts.
-- Includes restricted mode (`red`) behavior.
-- Includes a regression-style testsuite for command behavior.
-- Provides manpage and texinfo documentation sources.
+## Repository layout
 
-## Installation
+- `*.c`, `*.h`, `main.c`, etc. — legacy line-editor implementation.
+- `testsuite/` — behavior/regression tests for the C editor.
+- `doc/` — manpage and texinfo documentation sources.
+- `tui/` — new React terminal UI application.
+
+## Modern TUI quick start
+
+```bash
+cd tui
+npm install
+npm run dev -- ../README.md
+```
+
+### TUI controls
+
+- Move cursor: `↑/↓/←/→` or `h/j/k/l`
+- Enter insert mode: `i`
+- Enter command mode: `:`
+- Commands: `:w`, `:q`, `:wq`
+- Exit insert/command mode: `Esc`
+
+## Legacy core build and test
 
 ### Build prerequisites
 
@@ -22,74 +43,30 @@ This repository contains the C implementation, manual sources, and tests for a c
 - `make`
 - Optional docs tooling: `help2man`, `makeinfo`
 
-### Build and install
+### Build and test
 
 ```bash
-./configure
-make
-sudo make install
-```
-
-## Usage
-
-Run the editor:
-
-```bash
-ed [options] [file]
-```
-
-Run in restricted mode:
-
-```bash
-red [file]
-```
-
-Get built-in help:
-
-```bash
-ed --help
-```
-
-## Development setup
-
-```bash
-git clone <your-fork-url>
-cd synapse
 ./configure
 make
 make check
 ```
 
-## Configuration
-
-`./configure --help` lists supported configuration flags (install prefixes, compiler flags, and related options). The generated `Makefile` reflects those values.
-
-## Build / run instructions
-
-- Build binary: `make`
-- Run tests: `make check`
-- Clean outputs: `make clean`
-- Full clean: `make distclean`
-
-### Regenerating documentation artifacts
-
-Generated documentation outputs (such as `doc/ed.info`) are intentionally not committed. Regenerate locally when needed:
+### Install legacy binaries
 
 ```bash
-make info
-make man
+sudo make install
 ```
 
-## Troubleshooting
+## Development direction
 
-- If `make check` fails, ensure you built from a clean tree (`make clean && make`).
-- If docs targets fail, install `makeinfo` and `help2man`, or skip doc generation.
-- If `./configure` cannot find a compiler, set one explicitly: `CC=gcc ./configure`.
+Synapse is transitioning from a pure line editor into a modern terminal editing environment while maintaining scriptable, battle-tested core behaviors. Near-term roadmap items for the TUI include:
+
+- buffer/file switcher and command palette
+- multi-pane layout
+- diagnostics surface
+- language-server integration
+- theming and keymap profiles
 
 ## License
 
-This project is distributed under GNU GPLv3 (or later). See `LICENSE`.
-
-## Project status
-
-This codebase is in transition from legacy line-editor packaging to a cleaner open-source project structure suitable for collaborative modernization.
+GNU GPLv3 (or later). See `COPYING`.
