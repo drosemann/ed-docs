@@ -101,12 +101,14 @@ dist : doc
 	  $(DISTNAME)/INSTALL \
 	  $(DISTNAME)/Makefile.in \
 	  $(DISTNAME)/NEWS \
-	  $(DISTNAME)/README \
+	  $(DISTNAME)/README.md \
+  $(DISTNAME)/CONTRIBUTING.md \
+  $(DISTNAME)/CODE_OF_CONDUCT.md \
+  $(DISTNAME)/LICENSE \
 	  $(DISTNAME)/TODO \
 	  $(DISTNAME)/configure \
 	  $(DISTNAME)/doc/$(progname).1 \
-	  $(DISTNAME)/doc/$(pkgname).info \
-	  $(DISTNAME)/doc/$(pkgname).texinfo \
+		  $(DISTNAME)/doc/$(pkgname).texinfo \
 	  $(DISTNAME)/doc/fdl.texinfo \
 	  $(DISTNAME)/r$(progname).in \
 	  $(DISTNAME)/testsuite/check.sh \
