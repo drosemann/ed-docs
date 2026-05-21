@@ -1,12 +1,6 @@
 # Synapse TUI (React)
 
-This directory contains a modern terminal editor interface built with **React** and **Ink**.
-
-## Goals
-
-- Provide an approachable, modern terminal UX.
-- Keep keyboard-first workflows.
-- Offer a migration path from classic line-editing behavior toward a richer interactive editor.
+Synapse TUI is a modern terminal editor interface built with **React** and **Ink**.
 
 ## Run locally
 
@@ -21,6 +15,7 @@ npm run dev -- ../README.md
 ```bash
 cd tui
 npm install
+npm run typecheck
 npm run build
 npm start -- ../README.md
 ```
@@ -32,6 +27,6 @@ npm start -- ../README.md
 - Command mode (`:`) with `:w`, `:q`, `:wq`
 - Basic open/save support for a file path argument
 
-## Notes
+## Scope
 
-This is the first modern TUI slice. It intentionally focuses on core editing and mode handling to provide a concrete base for future capabilities like split panes, diagnostics, LSP integration, and command palette workflows.
+This repo is intentionally scoped to the React TUI implementation.
