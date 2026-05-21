@@ -109,16 +109,16 @@ const App = ({filePath}: {filePath?: string}) => {
       setMode('COMMAND');
       setCommand('');
     }
-    if (key.up || input === 'k') {
+    if (key.upArrow || input === 'k') {
       setCursorLine(prev => Math.max(0, prev - 1));
       setCursorCol(prev => Math.min(prev, (lines[Math.max(0, cursorLine - 1)] ?? '').length));
     }
-    if (key.down || input === 'j') {
+    if (key.downArrow || input === 'j') {
       setCursorLine(prev => Math.min(lines.length - 1, prev + 1));
       setCursorCol(prev => Math.min(prev, (lines[Math.min(lines.length - 1, cursorLine + 1)] ?? '').length));
     }
-    if (key.left || input === 'h') setCursorCol(prev => Math.max(0, prev - 1));
-    if (key.right || input === 'l') setCursorCol(prev => Math.min(currentLine.length, prev + 1));
+    if (key.leftArrow || input === 'h') setCursorCol(prev => Math.max(0, prev - 1));
+    if (key.rightArrow || input === 'l') setCursorCol(prev => Math.min(currentLine.length, prev + 1));
   });
 
   const viewport = useMemo(() => {

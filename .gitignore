@@ -1,23 +1,10 @@
+# Node dependencies
+node_modules/
+tui/node_modules/
+
 # Build outputs
-*.o
-ed
-red
-ed_profiled
-
-# Autotools/config outputs
-Makefile
-config.status
-
-# Test outputs
-testsuite/*.o
-testsuite/*.tmp
-errs.ck
-pipes.ck
-scripts.ck
-
-# Archives and compressed releases
-*.tar
-*.tar.lz
+dist/
+tui/dist/
 
 # Logs and local temp files
 *.log
