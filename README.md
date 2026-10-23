@@ -112,6 +112,32 @@ Keine kompilierten Artifacts im Repo – lokal regenerieren.
 
 Jeglicher Sync / Collaboration bleibt optional – lokale Docs + Core Editor sollen immer offline funktionieren.
 
+#### Vim-Gaps to close (quick wins)
+- Ex addresses: `:3`, `:10,20d`, `:%p`, `w filename`, `:e!`
+- `u` undo, `yy / dd / p` yank-paste, `/search`, `.` repeat
+- Word motions (`w, b, e`), `gg / G`, `A / I / O`, `r` replace, `~` case-flip
+- Make selection feel alive in NORMAL mode (currently readOnly textarea)
+- Word count, reading time, markdown preview (`:preview`)
+- `:history` / snapshots instead of just a dirty flag
+
+#### Fun / niche – deliberately not generic
+1. **ed-the-grumpy-clerk:** editor talks back in real `ed` style. `?` on every error, sarcastic `:help`, passive-aggressive `:w` ("finally. 42 lines saved.").
+2. **`:w` ritual:** `:w` with typewriter ka-chunk, paper shake, "WRITTEN" stamp. `:q` without `:w` makes the page crumple-shake. Save as ceremony.
+3. **Vim-golf score:** keystroke efficiency per doc. `h,j,k,l` spam lowers it, `:` commands raise it. Local leaderboard – no prose editor does this.
+4. **`:s/old/new/g` as star:** ex search-replace with live preview + `gc` confirm mode. Most web editors hide this.
+5. **Distraction seance (`:gloom` / `:candle`):** dark paper + candle flicker via CSS, only current line lit, typewriter sounds.
+6. **`q:` tape:** last 20 `:` commands as a replayable tape, replay with Enter.
+7. **Achievements, ed-style:** "First `:wq`", "100 lines without mouse", "1000 chars deleted with `x`". Stored locally as fortune stamps.
+
+### New ex commands (implemented)
+
+- Addresses: `:3`, `:1,5p`, `:%d`, `.,$` ranges, `w [file]`, `q[!]`, `wq`, `e[!] <title>`, `new [title]`
+- Substitute: `:s/old/new/g`, `:%s/old/new/gc` (confirm with y/n/a/q), `/pattern` + `n`/`N`
+- Normal: `w b e`, `gg G`, `A I O`, `r ~ J D C`, `>>`/`<<`, `yy p P`, `u`, `Ctrl-r`, `.`, `q:` tape
+- View: `:preview`, `:history`, `:restore N`, `:golf`, `:gloom` / `:candle`
+- Fun: `:achievements`, `:set sound|nosound|clerk=off|mild|full|gloom`
+- Snapshots are written to the browser on every `:w` (max 20 per doc). Undo is per open doc (max 100).
+
 ### Lizenz
 
 GNU GPLv3 – siehe [LICENSE](LICENSE). Ursprünglich MIT 2026, am 11.10.2026 zurück auf original GPL restored.
