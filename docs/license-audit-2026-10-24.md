@@ -35,6 +35,7 @@ Status: `BLOCKED — APPROVALS REQUIRED` (technical assessment, no legal advice)
 
 - Draft MIT-relicense request to `gregory@distrotech.co.za` prepared (EN).
 - Delivery failed 24.10.2026: `DNS Error NXDOMAIN distrotech.co.za`. Documented as failed contact, not consent.
+- GitHub profile [gregnietsky](https://github.com/gregnietsky) still exists but is dormant: most recent push across all public repos is `simpletun` on 2020-01-09T23:10:50Z (GitHub API, 24.10.2026), no public events in the last 90 days. Unreachable in practice, not a refusal.
 
 ## 6. What is still required before an MIT release
 
